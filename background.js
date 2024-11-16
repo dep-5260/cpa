@@ -109,7 +109,7 @@ async function updatePrice() {
                             iconUrl: 'icon.png',
                             title: 'Crypto Price Alert',
                             message: `${data.id} (${data.symbol}) has increased more than 2% in the past 5 minutes. From ${data.priceUsd} to ${updatedCoin.priceUsd}`,
-                            priority: 1
+                            priority: 2
                         });
                     } else if (updatedCoin.priceUsd < h_down) {
                         chrome.notifications.create({
@@ -117,7 +117,7 @@ async function updatePrice() {
                             iconUrl: 'icon.png',
                             title: 'Crypto Price Alert',
                             message: `${data.id} (${data.symbol}) has decreased more than 2% in the past 5 minutes. From ${data.priceUsd} to ${updatedCoin.priceUsd}`,
-                            priority: 1
+                            priority: 2
                         });
                     }
                 }
@@ -131,7 +131,11 @@ async function updatePrice() {
     });
 };
 
+chrome.alarms.create("priceCheck", { periodInMinutes: 3 });
 updatePrice();
-setInterval(function() {
-    updatePrice()
-}, ((1000 * 60) * 1))
+chrome.alarms.onAlarm.addListener((alarm) => {
+    if (alarm.name === "priceCheck") {
+      console.log("[Crypto Price Alert]: Updating...");
+      updatePrice();
+    }
+  });

@@ -1,12 +1,13 @@
 {
   "manifest_version": 3,
-  "name": "Crypto Price Alert",
-  "version": "0.1",
+  "name": "Crypto Price Alert ",
+  "version": "0.0.2",
   "permissions": [
     "storage",
     "tabs",
     "activeTab",
-    "notifications"
+    "notifications",
+    "alarms"
   ],
   "background": {
     "service_worker": "background.js"

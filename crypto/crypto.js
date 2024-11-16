@@ -97,4 +97,4 @@ async function fetchAndUpdate() {
 fetchAndUpdate()
 setInterval(function() {
     fetchAndUpdate()
-}, (30 * 1000))
+}, (15 * 1000))

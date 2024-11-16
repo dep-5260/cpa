@@ -5,7 +5,7 @@ The **Crypto Price Alert** extension allows you to monitor and receive updates o
 ## Features
 
 ### 1. **Real-Time Bitcoin Price Updates**
-   - The extension fetches and displays the **current price** of Bitcoin (BTC) as well as the **24-hour change**, **24-hour high**, **24-hour low**, and **supply**.
+   - The extension fetches and displays the **current price** of Bitcoin (BTC) as well as the **24-hour change**.
    - You can monitor live price fluctuations and keep track of Bitcoin's performance directly from the browser.
 
 ### 2. **Interactive Popup**
@@ -64,7 +64,7 @@ The extension requires the following permissions:
 - **`<all_urls>`**: To allow fetching data from any URL, necessary for crypto price data API access.
 
 ## Crypto API Link
-This extension uses the crypto information api from https://coincap.io/
+This extension gets the crypto information from https://coincap.io/.
 
 ## License
 
