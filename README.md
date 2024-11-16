@@ -29,6 +29,7 @@ The **Crypto Price Alert** extension allows you to monitor and receive updates o
 
 1. **Download the file**:
    - Download the ZIP file from the latest version: https://github.com/dep-5260/cpa/tags
+   - Extract the ZIP as a folder.
 
 2. **Load the extension in Chrome**:
    - Open **Chrome** and go to `chrome://extensions/`.
@@ -59,6 +60,8 @@ The extension requires the following permissions:
 - **`tabs`**: To open new tabs and display the detailed crypto page.
 - **`activeTab`**: To interact with the active tab if necessary.
 - **`<all_urls>`**: To allow fetching data from any URL, necessary for crypto price data API access.
+- **`notifications`**: To alert sudden crypto movements from the past minutes.
+- **`alarms`**: To prevent the service worker sleeping.
 
 ## Crypto API Link
 This extension gets the crypto information from https://coincap.io/.
