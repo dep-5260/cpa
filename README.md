@@ -27,11 +27,8 @@ The **Crypto Price Alert** extension allows you to monitor and receive updates o
 
 ## Installation
 
-1. **Clone the repository**:
-   - Clone this repository to your local machine:
-     ```bash
-     git clone https://github.com/yourusername/crypto-price-alert.git
-     ```
+1. **Download the file**:
+   - Download the ZIP file from the latest version: https://github.com/dep-5260/cpa/tags
 
 2. **Load the extension in Chrome**:
    - Open **Chrome** and go to `chrome://extensions/`.
