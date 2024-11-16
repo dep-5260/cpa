@@ -1,0 +1,95 @@
+/* General body styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 90vh;
+}
+
+/* Centered header */
+.header {
+    text-align: center;
+    margin-bottom: 2px;
+}
+
+.header h2 {
+    font-size: 24px;
+}
+
+/* Container for crypto divs */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 90%;
+    max-width: 600px; /* Restrict the width */
+}
+
+/* Crypto divs styles */
+.crypto {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: 100%; /* Make div take full width of container */
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.crypto h2 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.crypto p {
+    margin: 5px 0;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.crypto .stat {
+    font-weight: bold;
+}
+
+/* Positive and negative styles for percentage */
+.crypto .stat.positive {
+    color: green;
+}
+
+.crypto .stat.negative {
+    color: red;
+}
+
+/* Footer styles */
+.footer {
+    text-align: center;
+    padding: 20px;
+    color: #000000;
+    position: relative;
+    bottom: 0;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.footer a {
+    text-decoration: none;
+    color: #0000EE; /* Optional: Make the link stand out */
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,8 @@
+{
+    "coin": "BTC",
+    "int": 5,
+    "24pc": 3,
+    "lP": 60000,
+    "hP": 80000,
+    "BTC_URL": "https://api.coincap.io/v2/assets"
+}

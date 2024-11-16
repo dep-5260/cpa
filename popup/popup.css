@@ -1,0 +1,55 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+  }
+  
+  .container {
+    padding: 20px;
+    max-width: 300px;
+  }
+  
+  h1 {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .data-row {
+    display: flex;
+    justify-content: space-between; /* Ensures that the label and value are spaced out */
+    align-items: center; /* Centers vertically */
+    margin-bottom: 10px;
+  }
+  
+  .label {
+    font-weight: bold;
+    flex: 1; /* Takes up remaining space in the row */
+  }
+  
+  .value {
+    color: #007BFF;
+    text-align: right; /* Aligns the value to the right */
+  }
+  
+  .btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: #0056b3;
+  }
+  
