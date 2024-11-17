@@ -131,11 +131,36 @@ async function updatePrice() {
     });
 };
 
-chrome.alarms.create("priceCheck", { periodInMinutes: 3 });
+async function updatePriceIDR() {
+    const url = chrome.runtime.getURL("config.json"); // fetch config.json
+    const response = await fetch(url);
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`); // check
+    }
+
+    let config = await response.json();
+    let btc_idr_stat
+
+    await fetch(config.BTC_IDR_URL).then(x=>x.json()).then(n => btc_idr_stat = n.ticker).catch(err => console.error(err)); // fetch btc_idr_url api
+
+    btc_idr_stat.lastupdated = new Date().getTime()
+
+    chrome.storage.local.set({ cur_stat_idr: btc_idr_stat }, () => {
+        console.log("[Crypto Price Alert]: Crypto BTC IDR Price Updated");
+        console.log(btc_idr_stat);
+    });
+}
+
+chrome.alarms.create("priceCheck", { periodInMinutes: 5 });
+
 updatePrice();
+updatePriceIDR();
+
 chrome.alarms.onAlarm.addListener((alarm) => {
     if (alarm.name === "priceCheck") {
       console.log("[Crypto Price Alert]: Updating...");
       updatePrice();
+      updatePriceIDR();
     }
-  });
+});
