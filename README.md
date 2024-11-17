@@ -24,7 +24,7 @@ The **Crypto Price Alert** extension allows you to monitor and receive updates o
 ## Installation
 
 1. **Download the file**:
-   - Download the ZIP file from the latest version: https://github.com/dep-5260/cpa/tags
+   - Download the ZIP file from the latest version: https://github.com/dep-5260/cpa/releases
    - Extract the ZIP as a folder.
 
 2. **Load the extension in Chrome**:
