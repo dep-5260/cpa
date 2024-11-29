@@ -150,17 +150,49 @@ async function updatePriceIDR() {
         console.log("[Crypto Price Alert]: Crypto BTC IDR Price Updated");
         console.log(btc_idr_stat);
     });
+};
+
+async function updateBTCGraph() {
+    fetch('https://api.coincap.io/v2/assets/bitcoin/history?interval=h12')
+        .then(response => response.json())
+        .then(data => {
+            let toReturn = {};
+            const oneWeekInSeconds = 7 * 24 * 60 * 60;
+            const currentTime = new Date().getTime() / 1000;
+            const filteredData = data.data.filter(entry => {
+                const entryTime = new Date(entry.time).getTime() / 1000;
+                return (currentTime - entryTime) <= oneWeekInSeconds;
+            });
+
+            const prices = filteredData.map(entry => parseFloat(entry.priceUsd).toFixed(2));
+            const labels = filteredData.map(entry => {
+                const date = new Date(entry.time);
+                return `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
+            });
+
+            toReturn.labels = labels;
+            toReturn.data = prices;
+            chrome.storage.local.set({ btcGraph: toReturn }, () => {
+                console.log("[Crypto Price Alert]: Crypto BTC Graph Data Updated");
+                console.log(toReturn);
+            });
+        })
+        .catch(error => {
+            console.error('Error fetching Bitcoin data:', error);
+        });
 }
 
 chrome.alarms.create("priceCheck", { periodInMinutes: 5 });
 
 updatePrice();
 updatePriceIDR();
+updateBTCGraph();
 
 chrome.alarms.onAlarm.addListener((alarm) => {
     if (alarm.name === "priceCheck") {
       console.log("[Crypto Price Alert]: Updating...");
       updatePrice();
       updatePriceIDR();
+      updateBTCGraph();
     }
 });

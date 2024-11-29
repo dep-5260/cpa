@@ -93,3 +93,20 @@ body {
 .footer a:hover {
     text-decoration: underline;
 }
+
+.crypto-chart-container {
+    margin: 20px auto;
+    width: 90%; /* Matches typical .crypto div scaling */
+    max-width: 400px; /* Same max-width as .crypto div */
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    text-align: center;
+}
+
+
+.crypto-chart-container canvas {
+    width: 100% !important; /* Full width of container */
+    height: auto !important; /* Keep height proportional */
+}

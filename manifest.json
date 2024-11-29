@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Crypto Price Alert",
-  "version": "0.0.5",
+  "version": "0.0.7",
   "permissions": [
     "storage",
     "tabs",
@@ -20,7 +20,7 @@
   ],
   "web_accessible_resources": [
     {
-      "resources": ["config.json", "crypto/crypto.html"],
+      "resources": ["config.json", "crypto/crypto.html", "chart/chart.html", "libs/chart.umd.js"],
       "matches": ["<all_urls>"]
     }
   ],
