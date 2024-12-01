@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Crypto Price Alert - dev",
+  "name": "Crypto Price Alert",
   "version": "0.0.8",
   "permissions": [
     "storage",
