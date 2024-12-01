@@ -10,6 +10,7 @@
     <div class="header">
         <h2>Crypto Price Alert</h2>
     </div>
+    <br>
 
     <div class="container">
         <!-- Existing Crypto Info -->
@@ -34,9 +35,12 @@
             <p>24h % Change: <span class="stat" id="xrp-change">0.00%</span></p>
         </div>
 
+        <p id="outdated" style="color:red; font-size: 15px; font-style:italic">This version is outdated.</p>
+
         <div class="crypto-chart-container">
             <canvas id="myLineChart"></canvas>
         </div>
+
     </div>
 
     <footer class="footer">
@@ -47,5 +51,6 @@
     <script src="/libs/chart.umd.js"></script>
     <script src="/crypto/crypto.js"></script>
     <script src="/crypto/chart.js"></script>
+    <script src="/crypto/version.js"></script>
 </body>
 </html>
